@@ -1,0 +1,120 @@
+@import url(./reset.css);
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(34, 109, 202);
+}
+section .runway{
+    position: relative;
+    width: 400px;
+    height: 300vh;
+    background-color: gray;
+    border-left: 20px solid rgba(0, 0, 0, 0.25);
+    border-right: 20px solid rgba(0, 0, 0, 0.25);
+    transition: transform  5s ease;
+    transform: scaleX(1) scaleY(1);
+    transform-origin: top;
+}
+section:active .runway{
+    transform: scaleX(0.7) scaleY(0);
+    transform-origin: bottom;
+}
+section .runway::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 10px;
+    height: 100%;
+    background: repeating-linear-gradient(transparent 0%, transparent 50%,
+    #fff 50%, #fff 100%);
+    background-size: 10px 200px;
+    animation: runway 0.5s linear infinite;
+}
+section:active .runway::before{
+    animation: runway 0.25s linear infinite;
+}
+@keyframes runway {
+    0%{
+        background-position-y: 0px;
+    }
+    100%{
+        background-position-y: 400px;
+    }
+}
+.plane{
+    position: absolute;
+    background-size: contain;
+    pointer-events: none;
+    width: 500px;
+    height: auto;
+    bottom: 0;
+    filter: drop-shadow(10px 10px 0 rgba(0,0,0, 0.5));
+    transition: 5s;
+    z-index: 222;
+}
+section:active .plane{
+    width: 700px;
+    filter: drop-shadow(100px 100px 0 rgba(0,0,0, 0));
+}
+.clouds{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1111;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    transition: all 2s ease;
+}
+.clouds img{
+    position: absolute;
+    width: 1000px;
+    animation: cloud 4s linear infinite;
+    animation-delay: calc(var(--i) * -1s);
+}
+@keyframes cloud {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+.clouds2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(180deg);
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    transition: all 2s ease;
+}
+.clouds2 img{
+    position: absolute;
+    width: 1000px;
+    animation: cloud2 4s linear infinite;
+    animation-delay: calc(var(--i) * -1s);
+}
+@keyframes cloud2 {
+    0%{
+        transform: translateY(120%);
+    }
+    100%{
+        transform: translateY(-120%);
+    }
+}
+section:active .clouds{
+    opacity: 1;
+    transition-delay: 1.5s;
+}
+section:active .clouds2{
+    opacity: 1;
+    transition-delay: 1.5s;
+}

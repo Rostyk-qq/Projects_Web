@@ -1,0 +1,8 @@
+тобто ми можемо змінювати стилі які є прописані прямо на сторінці 
+приклад 
+
+<body>
+    <style style="display: block; white-space: pre;" contenteditable="true" >
+        тут стилі які можемо змінювати прямо на сторінці 
+    </style>
+</body>

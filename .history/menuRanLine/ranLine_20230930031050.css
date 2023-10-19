@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #333;
+ }
+.menu { 
+    position: relative;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items:center;
+}
+.menu__list { 
+    list-style-type: none;
+    width: 100%;
+    padding: ;
+    display: flex;
+    align-items: center;
+}
+.menu__list:nth-child(1){
+    margin-top: 20px;
+}
+.menu__list:nth-child(4){
+    margin-bottom: 20px;
+}
+.menu__link { 
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: aliceblue;
+    padding-left: 26px;
+    font-size: 26px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.container__line { 
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 100%;
+}
+.line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.menu{
+    border: 1px solid transparent;
+    box-shadow: inset 0px 0px 15px 0px transparent; 
+}
+.loaded .menu {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0px 0px 15px 0px rgb(0, 0, 0, 0.25); 
+    transition: all 1.2s ease;
+}
+.menu__link{
+    transform: translateX(-100%);
+}
+.loaded .menu__link{
+    transform: translateX(0%);
+    transition: transform 1.2s ease;
+}
+.loaded .menu__list:nth-child(1) .menu__link{
+    transition-delay: .5s;
+}
+.loaded .menu__list:nth-child(2) .menu__link{
+    transition-delay: .7s;
+}
+.loaded .menu__list:nth-child(3) .menu__link{
+    transition-delay: .9s;
+}
+.loaded .menu__list:nth-child(4) .menu__link{
+    transition-delay: 1.1s;
+}
+.container__line .line{
+    transform: translateX(-100%);
+}
+.loaded .container__line .line{
+    transform: translateX(0%);
+    transition: transform 2s ease;
+    transition-delay: 1s;
+}

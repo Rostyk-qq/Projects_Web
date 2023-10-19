@@ -1,0 +1,14 @@
+розкладання по колу 
+transform: rotate(calc(var(--i) * 36deg));
+
+36deg = 360deg / кількість елементів наприклад  9 
+
+<div><a>Hello</a></div>
+для div ми розкладаємо їх по колу  transform: rotate(calc(var(--i) * 36deg));
+для ми повертаємо в початкове значення 
+через transform: rotate(calc(var(--i) * -36deg));
+
+transform-style: preserve-3d; коли ми використовуємо 
+3d або якісь не лінійні функції для 3d роставляння
+transform-style: preserve-3d; в батьківському 
+

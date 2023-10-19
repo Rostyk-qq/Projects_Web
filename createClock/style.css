@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    font-family: cursive;
+}
+.wrapper { 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+.wrapper__clock { 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    transform-style: preserve-3d;
+    background-color: #525151;
+    border-radius: 50%;
+    z-index: 1;
+}
+.clock__background{
+    position: absolute;
+    height: 500px;
+    width: 400px;
+    background-color: #333;
+    border-radius: 200px 200px 10px 10px;
+}
+.clock__numbers li { 
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    inset: 10px;
+    list-style-type: none;
+    transform: rotate(calc(var(--i) * 30deg));
+}
+.clock__numbers li a { 
+    position: absolute;
+    text-decoration: none;
+    color: #fff;
+    transform: rotate(calc(var(--i) * -30deg));
+}
+.wrapper__clock::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: #111;
+    z-index: 100;
+}
+.arrows__minutes { 
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+.arrows__seconds { 
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+.arrows__hours { 
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+.arrows__minutes span{
+    position: absolute;
+    transform-origin: bottom;
+    height: 70%;
+    width: 6px;
+    background: linear-gradient(to top, transparent, #111 , #111);
+    border-radius: 5px 5px 0px 0px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.arrows__seconds span{
+    position: absolute;
+    transform-origin: bottom;
+    height: 70%;
+    width: 10px;
+    background: linear-gradient(to top, transparent, rgba(50, 50, 50), rgba(50, 50, 50));
+    border-radius: 10px 10px 0px 0px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.arrows__hours span{
+    position: absolute;
+    transform-origin: bottom;
+    height: 70%;
+    width: 15px;
+    background: linear-gradient(to top, transparent, rgba(63, 62, 62) , rgba(63, 62, 62));
+    border-radius: 10px 10px 0 0;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.clock__background-table { 
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    padding: 5px 12px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: inset 1px -1px 10px #111 ;
+}
+.hours {
+    padding: 0  3px 0  0;
+}
+.minutes { 
+    padding: 0  3px 0  3px;
+}
+.seconds { 
+    padding: 0  0 0  3px;
+}

@@ -1,0 +1,75 @@
+font-family: 'Press Start 2P', cursive;
+для canvas потрібно використовувати id а не class 
+також background  ми можемо прописувати через background-image: linear-gradient();
+
+canvas - цей тег дая оболонку в якій ми 
+можемо мальвати всякі фігурі типу 3d 
+також надає графічну графіку для створнення 
+анімацій і обробка забражень
+
+також ми можемо використовувавти class
+new Image(); який дає всі параметри для 
+image 
+використовував src
+
+listeners такі як onkeypup це поодія яка віддбувається після натискання
+на клавіатуру
+
+Після того, як клавішу відпустили, спрацьовує подія onkeyup
+коли йде саме зажимання спрацьовує onkeydown
+
+Примітка 
+завжди e.code === '' провіряє яка іменно кнопка
+тобто Space чи Enter
+
+тобто він базується на canvas який є основним болоком
+const ctx = canvas.getContext('2d'); - говорить про тип і створює основний обєкт 
+в якому міститься все для роботи 
+
+також обовязковий елемент це requestAnimationFrame(loop);
+для рекурсії
+
+також створення pipes
+ctx.fillStyle = '#333'; // замальовує
+ctx.fillRect(pipeX, -100, PIPE_WIDTH, pipeY); // приймає x y тобто позиції і width i heigth
+ctx.fillRect(pipeX, pipeY + PIPE_GAP, PIPE_WIDTH, canvas.height - pipeY)
+fillRect((left, rigth), (top, bottom), width, height)
+
+очищення canvas
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+це дотик до pipes
+    const birdBoundingBox = {
+        x: birdX,
+        y: birdY,
+        width: BIRD_WIDTH,
+        height: BIRD_HEIGHT
+    }
+    const topPipes = {
+        x: pipeX,
+        y: pipeY - PIPE_GAP + BIRD_HEIGHT,
+        width: PIPE_WIDTH,
+        height: pipeY - PIPE_GAP
+    }
+    const pipeBottom = {
+        x: pipeX,
+        y: pipeY + PIPE_GAP + BIRD_HEIGHT,
+        width: PIPE_WIDTH,
+        height: pipeY
+    }
+    if (
+        birdBoundingBox.x +(BIRD_WIDTH + (BIRD_WIDTH / 3)) > topPipes.x це шоб зпереді
+        && topPipes.x + BIRD_WIDTH / 3 > birdBoundingBox.x - це шоб заді був чіткий проскок тобто ми до початкової кординати pipe додаємо ширину bird і кажем шо вона має бути більша згачиьь воно має зайти трошки 
+        && birdBoundingBox.y < topPipes.y) {
+        return true
+    }
+    if(birdBoundingBox.x + (BIRD_WIDTH + (BIRD_WIDTH / 3))  > pipeBottom.x
+        && pipeBottom.x + BIRD_WIDTH / 3 > birdBoundingBox.x
+        && birdBoundingBox.y + (BIRD_WIDTH + (BIRD_WIDTH / 3))  > pipeBottom.y ){
+            return true;
+        }
+    if(birdY < 0 || birdY + (BIRD_HEIGHT + (BIRD_WIDTH / 3)) > canvas.height){
+        return true;
+    }
+
+    малює img ctx.drawImage(imageBall, birdX, birdY); img і margin

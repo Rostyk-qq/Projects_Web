@@ -1,0 +1,37 @@
+горизонтально 
+text-align: center;
+
+display: flex;
+justify-content: center;
+
+display: grid;
+justify-content: center;
+
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+
+align-self: center; flex-start flex-end
+його особливість в тому шо він не залежний від батька 
+як em 
+
+
+display: flex; - в бітьківському 
+margin: 0 auto;
+margin: auto 0;
+
+вертикально 
+vertical-align: middle;
+
+display: grid;
+place-items: center;
+
+display: flex;
+align-items: center;
+
+height: 100px;
+line-height: 100px;
+
+position: absolute;
+top: 50%;
+transform: translateY(-50%);

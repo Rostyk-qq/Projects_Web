@@ -1,0 +1,9 @@
+background-image: url(); задаємо фото
+background-repeat: no-repeat; x-repeat; y-repeat;
+background-size: cover; - заповнює повність contain; - враховує padding, margin
+background-position: 50% center; left right top
+background-position: горизонталь_позиція вертикальна_позиція; 
+
+background-attachment:
+це вказує як себе буде пводити 
+фото при скролі контейнера

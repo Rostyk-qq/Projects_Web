@@ -1,0 +1,17 @@
+transform-origin: top | left | rigth | bottom; 
+це для того шоб робити наш ефект ну наприклад transform-rotate: 
+відносоно однієї стоіронои або двох 
+
+далі 
+border-top-left-radius: 
+border-top-right-radius: 
+border-bottom-left-radius: 
+border-bottom-right-radius: 
+більшості ми для цих вдастивостей сказуємо половону ширени елемента 
+за допомогою цих даних ми можемо робити радіус для конкретних сторін(кутів)
+border-radius: 20px 20px 20px 20px; перших 2 це ліво право верхні 
+других 2 це нижні ліво право 
+
+filter: blur(1px); - блюрить 
+
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./rings.css">
+    <title>Rings</title>
+</head>
+<body>
+    <div class="circle_create">
+        <svg>
+            <filter id="wavy">
+                <feTurbulence x="0" y="0" baseFrequency="0.09" numOctaves="5" seed="2">
+                    <animate attributeName="baseFrequency" dur="60s" values="0.02;0.009;0.02" repeatCount="indefinite"></animate>
+                </feTurbulence>
+                <feDisplacementMap in="SourceGraphic" scale="90" />
+            </filter>
+        </svg>
+    </div>
+</body>
+</html>

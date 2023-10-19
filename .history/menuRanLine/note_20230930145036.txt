@@ -1,0 +1,2 @@
+will-change: transform; 
+ми використовуємо для того шоб 

@@ -1,0 +1,44 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #111;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+i{
+    position: absolute;
+    float: left;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to bottom, green, yellow);
+    border-radius: 50%;
+    animation: moveBalls 10s ease-in-out infinite;
+}
+
+i:nth-child(3n+1){
+    background: linear-gradient(to bottom, green, grey);
+}
+i:nth-child(3n+2){
+    background: linear-gradient(to bottom, orange, pink);
+}
+i:nth-child(3n+3){
+    background: linear-gradient(to bottom, purple, yellow);
+}
+
+
+@keyframes moveBalls{
+    0%{
+        transform: translateY(120vh);
+    }
+    30%{
+        transform: translateY(100vh);
+    }
+    75%{
+        transform: translateY(90vh);
+    }
+    100%{
+        transform: translateY(-50vh);
+    }
+}

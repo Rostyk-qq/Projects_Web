@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper__clock">
+            <div class="clock__numbers">
+                <li style="--i: 1;" ><a href="#">1</a></li>
+                <li style="--i: 2;" ><a href="#">2</a></li>
+                <li style="--i: 3;" ><a href="#">3</a></li>
+                <li style="--i: 4;" ><a href="#">4</a></li>
+                <li style="--i: 5;" ><a href="#">5</a></li>
+                <li style="--i: 6;" ><a href="#">6</a></li>
+                <li style="--i: 7;" ><a href="#">7</a></li>
+                <li style="--i: 8;" ><a href="#">8</a></li>
+                <li style="--i: 9;" ><a href="#">9</a></li>
+                <li style="--i: 10;" ><a href="#">10</a></li>
+                <li style="--i: 11;" ><a href="#">11</a></li>
+                <li style="--i: 12;" ><a href="#">12</a></li>
+            </div>
+
+            <div class="arrows__seconds"><span></span></div>
+            <div class="arrows__minutes"><span></span></div>
+            <div class="arrows__hours"><span></span></div>
+            
+        </div>
+        <div class="clock__background">
+            <div class="clock__background-table">
+                <div class="hours">00</div>
+                <span>:</span>
+                <div class="minutes">00</div>
+                <span>:</span>
+                <div class="seconds">00</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const min = document.querySelector(' .arrows__minutes');
+        const sec = document.querySelector(' .arrows__seconds');
+        const hour = document.querySelector(' .arrows__hours');
+
+        setInterval(() => {
+            let data = new Date();
+            let m = data.getMinutes() * 6;
+            let h = data.getHours() * 30;
+            let s = data.getSeconds() * 6;
+
+            min.style.transform = `rotate(${m}deg)`;  
+            sec.style.transform = `rotate(${s}deg)`;  
+            hour.style.transform = `rotate(${h + (m/12)}deg)`;  
+        })
+
+        const minT = document.querySelector('.minutes');
+        const secT = document.querySelector('.seconds');
+        const hourT = document.querySelector('.hours');
+
+        setInterval(() => {
+            let data = new Date();
+            let m = data.getMinutes();
+            let h = data.getHours();
+            let s = data.getSeconds();
+
+            minT.innerText = m;  
+            secT.innerText = s;  
+            hourT.innerText = h;  
+        })
+    </script>
+
+
+</body>
+</html>

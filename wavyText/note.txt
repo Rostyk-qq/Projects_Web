@@ -1,0 +1,29 @@
+робить дзеркало знизу 
+-webkit-box-reflect: below 1px linear-gradient(to top, #fff, transparent);
+
+спеціальний animation для хвиль
+
+@keyframes letters {
+    0%{
+        transform: translateY(0px);
+    }
+    20%{
+        transform: translateY(-20px);
+    }
+    40%,75%,100%{
+        transform: translateY(0px);
+    }
+}
+
+і animation-fill-mode
+forwards - використовується для 
+коли в нас є багато анімацій і 
+після виконання анімації стилі залишаться 
+в кінцевщму вигляді 
+bacwards - в початковий 
+both - і так і так
+
+точніше 
+forwards - це стилі застосовуються після анімації 
+backwards - перед 
+both - перед і після 

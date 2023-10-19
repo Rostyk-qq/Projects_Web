@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Flappy 2</title>
+</head>
+<body>
+    <div id="end_menu">
+        <h1>Game-over!</h1>
+        <span id="score">Score: <span>0</span></span>
+        <span id="score_best">Best: <span>0</span></span>
+        <div>
+            <button id="restart_game" >Restart</button>
+        </div>
+    </div>
+    <div id="main_container">
+        <canvas id="game-canvas" width="500" height="600"></canvas> 
+        <span id="dynamic_count" >0</span>       
+    </div>
+
+    <script src="./game.js" defer></script>
+</body>
+</html>

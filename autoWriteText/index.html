@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper__box">
+            <span class="text-1">Hello, Iam Rostyk!</span>
+        </div>
+    </div>
+
+    <script>            
+        const text = document.querySelector('.text-1');
+
+        const massive = ['Hello, I am Andriy!', 'Hello, I am Oleg!'];
+
+        let i = 0;
+
+        function updateText() {
+        text.style.animation = 'none';
+        text.style.display = 'none'    
+        setTimeout(() => {
+            text.textContent = massive[i];
+            text.style.animation = 'line 3s steps(40) both, blink 1s step-end 3 normal 3s, lineBack 3s steps(40) 6s forwards';
+            text.style.display = 'block' 
+            i++;
+            if (i === massive.length) {
+                i = 0;
+            }
+        }, 10);
+        }
+
+        updateText();
+
+        setInterval(updateText, 9000); 
+
+    </script>
+</body>
+</html>

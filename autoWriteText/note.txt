@@ -1,0 +1,48 @@
+важливо 
+ми використовували такий animation 
+animation: line 3s steps(40) forwards, blink 1s step-end 3 normal 3s, lineBack 3s steps(40) 6s forwards;
+
+для просування вперед 
+блимання курсору і назад 
+також можна побочити шо ми використовували fill-mode forwards 
+він містить в собі 
+1 - це послідовне виконання тобто як написали так і буде стояти і одноразове виконання
+
+далі задача в мене була зробити написання тексту автоматично але текст буде змінним
+
+мені потрібно було в css просто виконати це 1 раз без infinity і в js міняти текст 
+і оновлювати animation на наступні рази 
+
+приклад js code 
+<script>            
+        const text = document.querySelector('.text-1'); 
+        const wrapperBox = document.querySelector('.wrapper__box'); отримуємо наш елемент з текстом
+
+        const massive = ['Hello, I am Andriy!', 'Hello, I am Oleg!']; створюємо масив всіх 
+        потрібних текстів які ми будемо використовувати
+
+        let i = 0; лічильний
+
+        також ми використовуємо функцію для setInterval(функцію, час)
+        тобто він виконується через кожні там вказані секунди 
+
+        function updateText() {
+        text.style.animation = 'none'; - забираємо анімацію 
+        text.style.display = 'none' - також сам текст бо там стається баг і він мєлькає і ми його
+        просто скриємо і тут setTimeout відображемо його   
+            setTimeout(() => {
+                text.textContent = massive[i]; також присвоюємо значення тексту для нашого елементу 
+                text.style.animation = 'line 3s steps(40) both, blink 1s step-end 3 normal 3s, lineBack 3s steps(40) 6s forwards';
+                text.style.display = 'block' відображаємо текст і вище саму animation тобто для 
+                i++;
+                if (i === massive.length) { тут якшо і === length то обнуляємо бо в нас це буде безкінечно
+                    i = 0;
+                }
+            }, 10); ми це записуємо тут тобто в setTimeout - для відображення нового animation 
+        }
+
+        updateText(); викликаємо шоб застосувалися зміни 
+ 
+        setInterval(updateText, 9000);  і запиускаємо інтервал
+
+    </script>

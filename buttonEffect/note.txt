@@ -1,0 +1,2 @@
+e.target.closest це найближчий елемент до заданого
+document.documentElement - коріневий елемент (root element) - html

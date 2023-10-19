@@ -1,0 +1,9 @@
+display: inline; коли елементи розташовані 
+рівно і нема enters
+
+display: flex-inline; коли елементи розташовані 
+рівно, но ми можемо додаваи нові і вони будуть сунутися 
+
+display: block; з enters 
+
+display: inline-block; так і так може бути 

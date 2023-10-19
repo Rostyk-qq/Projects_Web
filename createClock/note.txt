@@ -1,0 +1,30 @@
+тут була проблема з центруванням 
+коли ми вмикали setInterval 
+і я для інтервалів додвав саму стрілу 
+а потрібно стріли контейнер шоб 
+він йшов по інтервалах 
+
+ось приклад зразу з setInterval
+
+   const min = document.querySelector(' .arrows__minutes');
+   const sec = document.querySelector(' .arrows__seconds');
+   const hour = document.querySelector(' .arrows__hours');
+
+   setInterval(() => { робить інтервал тобто при якохось змінах значень m s h 
+       let data = new Date();
+       let m = data.getMinutes() * 6;  
+       let h = data.getHours() * 30;
+       let s = data.getSeconds() * 6;
+       і потрібно для відображання зробити множення но це тільки для вигляду 
+       а для табла нічого непотрібно просто зробити запис
+
+       min.style.transform = `rotate(${m}deg)`;  
+       sec.style.transform = `rotate(${s}deg)`;  
+       hour.style.transform = `rotate(${h + (m/12)}deg тут по памяті)`;  
+   })
+
+   вигляд сосульки 
+   background: linear-gradient(to top, transparent, rgba(50, 50, 50), rgba(50, 50, 50));
+    border-radius: 10px 10px 0px 0px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;

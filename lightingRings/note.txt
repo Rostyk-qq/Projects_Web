@@ -1,0 +1,30 @@
+ми створюємо батьківський клас 
+в якому прописуємо:
+
+<svg>
+    <filter id='#wavy'> - це якраз цей ефект буде примінятися і ми його в батьківському в css через filter: url('тут id еффекту')  
+        прописуємо сам ефект
+        <feTurbulence x='0' y='0' baseFrequency='0.009' numOctaves='5' seed='2' >
+            <animate attributeName="baseFrequency" dur"60s" values="0.02;0.009;0.02" repeatCount="indefinite"></animate>
+        </feTurbulence>        
+        <feDisplacementMap in="SourceGraphic" scale='70' />
+    </filter>
+</svg>
+
+примітка 
+приклад написання css для самого кола тобто батьківського і як ми підєднюємо цей filter 
+
+коло{
+    position: relative;
+    width:500px;
+    height:500px;
+    filter: url('id те що на filter знаходиться');
+}
+коло::after{
+    content: '';
+    тут далі параметри 
+    position: absolute;
+    inset: 100px;
+    border-radius: 50%;
+    animation itc...
+}

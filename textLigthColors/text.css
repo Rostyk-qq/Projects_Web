@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background-color: #333;
+}
+.text{
+    display: flex;
+    -webkit-box-reflect: below 1px linear-gradient(to bottom, transparent, #fff3) ;
+}
+.text span{
+    font-family: cursive;
+    color: purple;
+    user-select: none;
+    pointer-events: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 24px;
+    animation: text 2s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+@keyframes text {
+    0%{
+        transform: translateY(0px);
+        color: var(--clr);
+        text-shadow: 
+        0px 0px 2px var(--clr),
+        0px 0px 4px var(--clr),
+        0px 0px 6px var(--clr);
+    }
+    20%{
+        transform: translateY(-20px);
+    }
+    50%, 100%{
+        transform: translateY(0px);
+    } 
+}

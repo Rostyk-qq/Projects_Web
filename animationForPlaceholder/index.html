@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <input type="text" class="text" required>
+        <label>Write&ensp;some&ensp;text!</label>
+    </div>
+
+    <script>
+        const text = document.querySelector('label');
+        text.innerHTML = text.textContent.split('')
+        .map((el, i) => `<span style="transition-delay: ${i*30}ms; filter: hue-rotate(${i * 20}deg);"  >${el}</span>`).join('');
+    </script>
+</body>
+</html>

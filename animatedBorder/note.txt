@@ -1,0 +1,11 @@
+використання linear-gradient
+background: linear-gradient(45deg, #01eff7 0%, #01eff7 10%, transparent 10%, transparent 50%,#01eff7 50%, #01eff7 60%, transparent 60%, transparent 100%);
+розподілення по % це чіткі межі а якшо просто по розмиті межі
+
+inset працює з absolute 
+
+position: absolute;
+inset: 20px;
+
+також ми для зменшення в розмірі можемо поставити
+background-size: 10px, 10px; тобто це самі розміри бекграунду вближення і відближення 

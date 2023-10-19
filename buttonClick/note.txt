@@ -1,0 +1,30 @@
+тут є фішка ми за допомогою 
+element.style.top = `${e.pageY - (mainElement.getBoundingClientRect().top - scrollY) - (radius / 4)}px`;
+element.style.left = `${e.pageX - (mainElement.getBoundingClientRect().left - scrollX) - (radius / 4)}px`;
+
+робимо 2 дії зразу це ставимо межі кліку тобто краї 
+верхній лівий щоб клік реагував тільки коли на сам елемент 
+ми здійснювали клік
+і тим шо ми діломи на радіус ми встановлюємо центер курсора при кліку 
+
+отримання стилів через getComputedStyle(elemnt).його силь який в ньому є
+наприклад animationDuration
+а задати ми можемо через setProperty('width', 100 + 'px')
+
+також додати клас до елементу наприклад стовреного в js 
+classList.add()
+перевірити чи батьківський клас містить дочірні при якомусь event
+
+e.target.classList.contain() e.target - це вказує маршрут до класу для яеого ми прописуємо event
+
+element.classList.contains тут просто елемент 
+
+e.target.closest() - це найблищий елемент до e.target
+наприклад ми беремо body і body.closest() то це буде його дочірній 
+
+також є 
+element.previousElementSibling() - попередній елемент
+element.nextElementSibling() - наступний елемент 
+element.parentElement() - отримання бітькіського елемента
+element.cloneNode() - клонувати елемент 
+element.parentNode - отримання бітькіського елемента
